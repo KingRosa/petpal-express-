@@ -13,9 +13,9 @@ import "./App.css";
 ================================================== */
 
 const API =
-  import.meta.env.VITE_API_URL ||
-  "http://localhost:3000/api";
-
+  import.meta.env.DEV
+    ? "http://localhost:3000/api"
+    : "/api";
 
 export default function App() {
   const [pets, setPets] =
