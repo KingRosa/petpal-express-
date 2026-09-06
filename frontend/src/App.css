@@ -1,0 +1,840 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+
+/* ==================================================
+   GLOBAL
+================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  font-family: "Nunito", sans-serif;
+
+  background: #f8f7f2;
+
+  color: #252525;
+}
+
+
+/* ==================================================
+   MAIN APP
+================================================== */
+
+.petpal-app {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding-top: 55px;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(17, 122, 118, 0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 50%,
+      rgba(242, 182, 109, 0.15),
+      transparent 30%
+    ),
+    #f8f7f2;
+}
+
+
+/* Decorative paw */
+
+.petpal-app::before {
+  content: "🐾";
+
+  position: absolute;
+
+  top: 90px;
+  left: 5%;
+
+  font-size: 100px;
+
+  opacity: 0.04;
+
+  pointer-events: none;
+
+  transform: rotate(-20deg);
+
+  animation:
+    floatingPaw
+    6s ease-in-out infinite;
+}
+
+
+.petpal-app::after {
+  content: "🐾";
+
+  position: absolute;
+
+  top: 300px;
+  right: 6%;
+
+  font-size: 90px;
+
+  opacity: 0.04;
+
+  pointer-events: none;
+
+  transform: rotate(20deg);
+
+  animation:
+    floatingPaw
+    7s ease-in-out infinite;
+}
+
+
+@keyframes floatingPaw {
+
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -15px;
+  }
+
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.petpal-header {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 760px;
+
+  margin: 0 auto 38px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.petpal-eyebrow {
+  margin: 0 0 12px;
+
+  color: #117a76;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+}
+
+
+.petpal-title {
+  width: 100%;
+
+  margin: 0;
+
+  text-align: center;
+
+  color: #252525;
+
+  font-size:
+    clamp(48px, 7vw, 78px);
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+}
+
+
+.petpal-subtitle {
+  max-width: 590px;
+
+  margin: 18px auto 0;
+
+  text-align: center;
+
+  color: #707070;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+
+/* ==================================================
+   CONTROLS SECTION
+================================================== */
+
+.pet-controls-section {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 0 24px;
+}
+
+
+/* ==================================================
+   STATS
+================================================== */
+
+.pet-stats {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-bottom: 25px;
+}
+
+
+.stat-card {
+  min-width: 155px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 13px 18px;
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  border:
+    1px solid rgba(
+      255,
+      255,
+      255,
+      0.9
+    );
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 7px 20px
+    rgba(0, 0, 0, 0.05);
+
+  backdrop-filter:
+    blur(12px);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.stat-card:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 12px 25px
+    rgba(0, 0, 0, 0.08);
+}
+
+
+.stat-icon {
+  font-size: 23px;
+}
+
+
+.stat-info {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.stat-info strong {
+  color: #117a76;
+
+  font-size: 22px;
+
+  line-height: 1;
+}
+
+
+.stat-info span {
+  margin-top: 3px;
+
+  color: #777;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* ==================================================
+   FILTERS
+================================================== */
+
+.filter-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 22px;
+}
+
+
+.filter-button {
+  padding:
+    9px 17px;
+
+  background: white;
+
+  color: #555;
+
+  border:
+    1px solid #d9dedb;
+
+  border-radius: 50px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.filter-button:hover {
+  border-color: #117a76;
+
+  transform:
+    translateY(-2px);
+}
+
+
+.filter-button.active {
+  background: #117a76;
+
+  border-color: #117a76;
+
+  color: white;
+}
+
+
+/* ==================================================
+   REFRESH BUTTON
+================================================== */
+
+.petpal-controls {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 30px;
+}
+
+
+.refresh-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    12px 24px;
+
+  background: #117a76;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 14px
+    rgba(17, 122, 118, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.refresh-button:hover {
+  background: #0d625f;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(17, 122, 118, 0.28);
+}
+
+
+.refresh-button:active {
+  transform: translateY(0);
+}
+
+
+.refresh-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* ==================================================
+   SUCCESS MESSAGE
+================================================== */
+
+.success-message {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 500px;
+
+  margin: 0 auto 28px;
+
+  padding:
+    12px 18px;
+
+  background: #e4f5ef;
+
+  color: #117a76;
+
+  border:
+    1px solid #b7dbcf;
+
+  border-radius: 11px;
+
+  font-weight: 800;
+
+  animation:
+    messageEntrance
+    0.35s ease;
+}
+
+
+@keyframes messageEntrance {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* ==================================================
+   LOADING
+================================================== */
+
+.loading-container {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 40px auto;
+
+  text-align: center;
+
+  color: #707070;
+}
+
+
+.loading-paw {
+  display: inline-block;
+
+  font-size: 38px;
+
+  animation:
+    loadingPaw
+    1s ease-in-out infinite;
+}
+
+
+.loading-container p {
+  margin-top: 8px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+@keyframes loadingPaw {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-5deg);
+  }
+
+  50% {
+    transform:
+      translateY(-9px)
+      rotate(5deg);
+  }
+
+}
+
+
+/* ==================================================
+   ERROR
+================================================== */
+
+.error-message {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 540px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  margin: 25px auto;
+
+  padding:
+    15px 20px;
+
+  background: #fde8e8;
+
+  color: #a63d3d;
+
+  border:
+    1px solid #f4caca;
+
+  border-radius: 11px;
+
+  text-align: center;
+}
+
+
+/* ==================================================
+   EMPTY
+================================================== */
+
+.empty-state {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 500px;
+
+  margin:
+    45px auto;
+
+  padding:
+    38px 25px;
+
+  background: white;
+
+  border:
+    1px solid #e7e7e7;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.06);
+
+  color: #707070;
+}
+
+
+.empty-icon {
+  font-size: 38px;
+}
+
+
+.empty-state h2 {
+  margin:
+    8px 0 5px;
+
+  color: #252525;
+}
+
+
+.empty-state p {
+  margin: 0;
+}
+
+
+/* ==================================================
+   PET GRID
+================================================== */
+
+.pet-grid {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1200px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(250px, 280px)
+    );
+
+  justify-content: center;
+
+  gap: 28px;
+
+  margin:
+    40px auto 90px;
+
+  padding:
+    0 24px;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.petpal-footer {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  padding:
+    45px 20px;
+
+  background: #0f5f5c;
+
+  color: white;
+
+  text-align: center;
+}
+
+
+.footer-paw {
+  font-size: 27px;
+}
+
+
+.petpal-footer p {
+  margin:
+    6px 0 2px;
+
+  font-size: 17px;
+
+  font-weight: 900;
+}
+
+
+.petpal-footer small {
+  font-size: 1.1rem; 
+  color:
+    rgba(255, 255, 255, 0.72);
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 768px) {
+
+  .petpal-app {
+    padding-top: 40px;
+  }
+
+
+  .petpal-title {
+    font-size:
+      clamp(44px, 8vw, 62px);
+
+    letter-spacing: -2px;
+  }
+
+
+  .petpal-subtitle {
+    font-size: 16px;
+  }
+
+
+  .pet-grid {
+    gap: 22px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .petpal-app {
+    padding-top: 35px;
+  }
+
+
+  .petpal-header {
+    padding:
+      0 15px;
+  }
+
+
+  .petpal-eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .petpal-title {
+    font-size: 43px;
+
+    line-height: 1.05;
+  }
+
+
+  .petpal-subtitle {
+    max-width: 350px;
+
+    font-size: 15px;
+  }
+
+
+  .pet-stats {
+    gap: 10px;
+  }
+
+
+  .stat-card {
+    min-width: 140px;
+
+    padding:
+      11px 15px;
+  }
+
+
+  .filter-buttons {
+    gap: 8px;
+  }
+
+
+  .filter-button {
+    padding:
+      8px 13px;
+
+    font-size: 13px;
+  }
+
+
+  .refresh-button {
+    width: 100%;
+
+    max-width: 300px;
+  }
+
+
+  .pet-grid {
+    grid-template-columns:
+      1fr;
+
+    max-width: 360px;
+
+    gap: 22px;
+
+    margin-bottom: 60px;
+  }
+
+}

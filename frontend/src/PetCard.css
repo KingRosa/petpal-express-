@@ -1,0 +1,400 @@
+/* ==================================================
+   PET CARD
+================================================== */
+
+.pet-card {
+  width: 100%;
+
+  min-height: 420px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.95);
+
+  border:
+    1px solid #e7e7e7;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 7px 22px
+    rgba(0, 0, 0, 0.07);
+
+  animation:
+    petCardEntrance
+    0.5s ease both;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+
+.pet-card:hover {
+  transform:
+    translateY(-8px);
+
+  border-color:
+    #b8d8d5;
+
+  box-shadow:
+    0 18px 35px
+    rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==================================================
+   ADOPTED CARD
+================================================== */
+
+.pet-card-adopted {
+  background: #f1faf7;
+
+  border-color: #a8d5c7;
+}
+
+
+/* ==================================================
+   ENTRANCE
+================================================== */
+
+@keyframes petCardEntrance {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.pet-image-container {
+  position: relative;
+
+  width: 100%;
+
+  height: 210px;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+
+.pet-image {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.45s ease;
+}
+
+
+.pet-card:hover .pet-image {
+  transform:
+    scale(1.06);
+}
+
+
+/* ==================================================
+   STATUS
+================================================== */
+
+.pet-status {
+  position: absolute;
+
+  top: 14px;
+
+  left: 14px;
+
+  padding:
+    6px 11px;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  backdrop-filter:
+    blur(8px);
+
+  box-shadow:
+    0 3px 10px
+    rgba(0, 0, 0, 0.1);
+}
+
+
+.pet-status-available {
+  background:
+    rgba(234, 247, 243, 0.95);
+
+  color: #117a76;
+}
+
+
+.pet-status-adopted {
+  background:
+    rgba(17, 122, 118, 0.94);
+
+  color: white;
+}
+
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.pet-card-content {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 20px;
+
+  text-align: center;
+}
+
+
+/* ==================================================
+   TYPE
+================================================== */
+
+.pet-type {
+  margin:
+    0 0 3px;
+
+  color: #117a76;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* ==================================================
+   NAME
+================================================== */
+
+.pet-name {
+  margin: 0;
+
+  color: #252525;
+
+  font-size: 26px;
+
+  font-weight: 900;
+
+  line-height: 1.2;
+}
+
+
+/* ==================================================
+   TRAIT
+================================================== */
+
+.pet-trait {
+  display: inline-block;
+
+  margin-top: 12px;
+
+  padding:
+    5px 11px;
+
+  background: #f2eee6;
+
+  color: #625b50;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
+.pet-description {
+  margin:
+    15px 0 20px;
+
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+
+  text-align: center;
+}
+
+
+/* ==================================================
+   ACTIONS
+================================================== */
+
+.pet-actions {
+  width: 100%;
+
+  margin-top: auto;
+}
+
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.adopt-button,
+.return-button {
+  width: 100%;
+
+  padding:
+    11px 15px;
+
+  border-radius: 10px;
+
+  font-family: "Nunito", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* ==================================================
+   ADOPT BUTTON
+================================================== */
+
+.adopt-button {
+  border: none;
+
+  background: #117a76;
+
+  color: white;
+
+  box-shadow:
+    0 5px 14px
+    rgba(17, 122, 118, 0.2);
+}
+
+
+.adopt-button:hover {
+  background: #0d625f;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 18px
+    rgba(17, 122, 118, 0.28);
+}
+
+
+.adopt-button:active {
+  transform:
+    translateY(0);
+}
+
+
+/* ==================================================
+   RETURN BUTTON
+================================================== */
+
+.return-button {
+  background: transparent;
+
+  color: #b75555;
+
+  border:
+    1px solid #dca0a0;
+}
+
+
+.return-button:hover {
+  background: #fff1f1;
+
+  border-color: #c96d6d;
+
+  color: #a84444;
+
+  transform:
+    translateY(-2px);
+}
+
+
+.return-button:active {
+  transform:
+    translateY(0);
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .pet-image-container {
+    height: 230px;
+  }
+
+
+  .pet-card-content {
+    padding: 18px;
+  }
+
+
+  .pet-name {
+    font-size: 24px;
+  }
+
+
+  .pet-description {
+    font-size: 13px;
+  }
+
+}
